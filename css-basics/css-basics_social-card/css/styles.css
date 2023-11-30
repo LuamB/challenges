@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  border-radius: 5%; /* Use 50% to create a circle, adjust as needed */
+  overflow: hidden;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.light-weight {
+  font-weight: 300;
+}
+
+button svg {
+  color: blue;
+  background: white;
+  border: 0;
+  border-radius: 0;
+  padding: 0 0;
+}
+
+/*svg {
+  border: none; 
+  background-color: transparent; 
+  display: block;
+}*/

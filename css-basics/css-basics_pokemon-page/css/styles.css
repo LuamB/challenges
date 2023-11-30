@@ -77,7 +77,19 @@ section {
 */
 
 .subtitle {
-  /* your solution */
+  display: inline;
+  padding-left: 10px;
+  border-left: 3px solid gold;
+  padding-right: 10px; /* Remove default padding */
+  border-right: 3px solid gold; /* Set the right border */
+}
+
+.favourites h2 {
+  display: inline;
+  padding-left: 10px;
+  border-left: 3px solid orange;
+  padding-right: 10px; /* Remove default padding */
+  border-right: 3px solid orange; /* Set the right border */
 }
 
 /* ------- List ------- */

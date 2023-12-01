@@ -1,0 +1,75 @@
+/* Please scroll down to the start of your exercise! */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+section {
+  background-color: lemonchiffon;
+  display: grid;
+  place-items: center;
+}
+
+.skyblue {
+  background-color: skyblue;
+}
+
+button {
+  background-color: white;
+  padding: 8px 25px;
+}
+
+/* montserrat-100 - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100;
+  src: url("~/Library/Fonts/montserrat-v26-latin_latin-ext-100.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-regular - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("~/Library/Fonts/montserrat-v26-latin_latin-ext-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* Your exercise starts here */
+
+/* Add your CSS styles below this line. Feel free to replace the comments with your code. Make sure not to put your code into the comments, because then nothing will happen. */
+
+.button1 {
+  /*Style me! Change my border, set a border radius or what you want to try out. :) */
+  border-radius: 24px;
+}
+
+.button2:hover {
+  /*Style me! Change my color, or my background-color. Or both! You can test out different color modes here - like HEX, RGB, ... */
+  color: cadetblue;
+  background-color: bisque;
+}
+
+.button3 {
+  /*Style me! You can test out changing the font, or font size, ...*/
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.button4 {
+  /*Style me! Can you add a shadow to this button? Maybe play around with the shadow properties, as well? You can even color the shadow, make it bigger or smaller, ... */
+  text-shadow: 1px 1px 1px #000;
+}
+
+/* Feel free to play around with other properties, as well. */

@@ -37,6 +37,9 @@ main {
 
 .box--top-left {
   background-color: #aed6f1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .box--top-center {

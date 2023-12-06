@@ -39,7 +39,8 @@ body {
   padding: 2rem;
   margin: auto;
 
-  /* Add styles to the container */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .services__item {

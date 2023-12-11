@@ -1,28 +1,26 @@
 console.clear();
 
 // 1.
-console.log('1. 2 == "2"', true);
+console.log(Boolean(2 == "2"));
 // 2.
-console.log('2. 2 === "2"', false);
+console.log(Boolean(2 === "2"));
 // 3.
-console.log("3. 2 === 2", true);
+console.log(Boolean(2 === 2));
 // 4.
-console.log("4. hello world", true);
+console.log(Boolean("hello world"));
 // 5.
-console.log('5. ""', false);
+console.log(Boolean(""));
 // 6.
-console.log("6. true", true);
+console.log(Boolean(true));
 // 7.
-console.log("7. 0", false);
+console.log(Boolean(0));
 // 8.
-console.log("8. -50", true);
+console.log(Boolean(-50));
 // 9.
-console.log("9. 50", true);
+console.log(Boolean(50));
 // 10.
-console.log("10. 5 > 1", true);
+console.log(Boolean(5 > 1));
 // 11.
-console.log('11. "1 > 10"', true);
+console.log(Boolean("1 > 10"));
 // 12.
-console.log('12. "false"', true);
-
-console.log(Boolean("Try it out"));
+console.log(Boolean("false"));

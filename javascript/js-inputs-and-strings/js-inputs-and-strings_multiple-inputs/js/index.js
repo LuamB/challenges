@@ -15,11 +15,21 @@ const firstInput = document.querySelector("[data-js=first-input]");
 const secondInput = document.querySelector("[data-js=second-input]");
 const button = document.querySelector("[data-js=button]");
 
+// button.addEventListener("click", () => {
+//   // First click
+//   const firstValue = firstInput.value;
+//   secondInput.value = firstValue;
+// });
+
+// button.addEventListener("click", () => {
+//   // Second click
+//   const firstValue = firstInput.value;
+//   secondInput.value = firstValue.toUpperCase();
+// });
+
 button.addEventListener("click", () => {
-  // First click
-  const temp = firstInput.value;
-  secondInput.value = temp;
-  // Second click
-  secondInput.value = temp.toUpperCase();
   // Third click
+  const firstValue = firstInput.value;
+  firstInput.value = secondInput.value;
+  secondInput.value = firstValue;
 });

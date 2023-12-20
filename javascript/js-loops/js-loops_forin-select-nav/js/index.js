@@ -22,6 +22,13 @@ main.append(select);
 
 // --v-- write/change code here --v--
 
+for (const key in languages) {
+  const option = document.createElement("option");
+  option.value = key;
+  option.textContent = languages[key];
+  select.appendChild(option);
+}
+
 // --^-- write/change code here --^--
 
 // Part 2: Creating a Navigation Bar
@@ -38,5 +45,17 @@ main.append(navElement);
 navElement.append(ul);
 
 // --v-- write/change code here --v--
+
+ul.classList.add("ul");
+
+for (key in nav) {
+  const listItem = document.createElement("li");
+  const anchorTag = document.createElement("a");
+  anchorTag.href = nav[key].href;
+  anchorTag.textContent = nav[key].text;
+  listItem.appendChild(anchorTag);
+  ul.appendChild(listItem);
+}
+
 
 // --^-- write/change code here --^--

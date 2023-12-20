@@ -19,12 +19,16 @@ const colors = [
   "#A5A5A5",
 ];
 
-// colors.forEach((color) => {
-//   const perColor = document.createElement("div");
-//   perColor.classList.add("color-box");
-//   perColor.style.backgroundColor = color;
-//   document.body.append(perColor);
-// });
+//Task 1: Use forEach() with callback function
+
+colors.forEach((color) => {
+  const perColor = document.createElement("div");
+  perColor.classList.add("color-box");
+  perColor.style.backgroundColor = color;
+  document.body.append(perColor);
+});
+
+//Task 2: Replace callback function with reference function
 
 function renderColorBox(color) {
   const perColor = document.createElement("div");

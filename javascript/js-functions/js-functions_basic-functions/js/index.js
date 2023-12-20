@@ -10,14 +10,12 @@ console.clear();
 
 // --v-- write your code here --v--
 
-const book = [
-  {
-    Title: "The Shadow King",
-    Author: "Maaza Mengiste",
-    Rating: 4.9,
-    Sales: 1000,
-  },
-];
+const book = {
+  Title: "The Shadow King",
+  Author: "Maaza Mengiste",
+  Rating: 4.9,
+  Sales: 1000,
+};
 
 // --^-- write your code here --^--
 

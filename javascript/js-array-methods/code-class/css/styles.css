@@ -1,0 +1,51 @@
+:root {
+    --color-nemo: #ff4a11;
+    --color-granite: #252629;
+    --color-water-10: #f3f5f9;
+    --color-foam: #ffffff;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: system-ui;
+    color: var(--color-nemo);
+}
+header {
+    text-align: center;
+    padding: 30px;
+    font-size: 36px;
+}
+h1 {
+    font-size: 36px;
+    color: var(--color-nemo);
+    padding: 0;
+    margin: 0;
+}
+p {
+    max-width: 600px;
+}
+article {
+    margin: 2rem;
+    padding-left: 30px;
+    padding-top: 20px;
+    border-radius: 10px;
+    background: var(--color-water-10);
+    position: relative;
+    width: 80%;
+    height: 15vw;
+    min-height: 130px;
+}
+img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    transform: translateX(100%);
+}

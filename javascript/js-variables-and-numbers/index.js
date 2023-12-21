@@ -1,8 +1,9 @@
-// Calculate circle area and circumference
+//Calculate circle area and circumference
 
 const circleRadius = 5;
 const circleArea = Math.PI * Math.pow(circleRadius, 2);
 const circumference = 2 * Math.PI * circleRadius;
+
 // console.log("circelArea: ", circleArea);
 // console.log("circumference: ", circumference);
 

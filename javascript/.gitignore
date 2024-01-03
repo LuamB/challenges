@@ -1,4 +1,7 @@
+.DS_Store
+node_modules
 README.md
 review.md
 quiz.md
 *solution*
+

@@ -1,4 +1,4 @@
-import cards from "../../cards.js";
+import cards from "../../data/cards.js";
 import Card from "../Card/Card.js";
 
 export default function Form() {

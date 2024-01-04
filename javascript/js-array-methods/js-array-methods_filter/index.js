@@ -26,20 +26,26 @@ const cards = [
 const onlyCardWithIdTwo = cards.filter((card) => {
   return card.id === "2";
 });
+// // Javier's more elegant solution
+// const onlyCardWithIdTwo = cards.filter(card => card.id === "2");
 console.log("Card with id = 2", onlyCardWithIdTwo);
 
 const allCardsWith3Tags = cards.filter((card) => {
   return card.tags.length == 3;
 });
+// // Javier's more elegant solution
+// const allCardsWith3Tags = cards.filter(card => card.tags.length === 3);
 console.log("Cards with 3 tags", allCardsWith3Tags);
 
-const allCardsThatAreNotBookmarked = cards.filter((card) => {
-  return !card.isBookmarked;
-});
+// const allCardsThatAreNotBookmarked = cards.filter((card) => {
+//   return !card.isBookmarked;
+// });
+// My more elegant solution
+const allCardsThatAreNotBookmarked = cards.filter((card) => !card.isBookmarked);
 console.log("Cards not bookmarked", allCardsThatAreNotBookmarked);
 
 const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter((card) => {
-  return card.tags == "html" || ("js" && card.isBookmarked);
+  return (card.tags == "html" || "js") && card.isBookmarked;
 });
 console.log(
   "Cards with html or js tags and bookmarked",

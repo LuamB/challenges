@@ -67,12 +67,7 @@ footer {
   background-color: #55a630;
 }
 
-.flex-container.flex-on-children {
-  gap: 1rem;
-  background-color: #55a630;
-}
-
-.flex-item {
+.flex-on-children > .flex-item {
   flex: 1; /* has to be commented out for no flex on children */
   background-color: #4361ee;
   color: white;

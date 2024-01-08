@@ -41,6 +41,12 @@ fetchDataAndRender();
 
 // --v-- your code below this line --v--
 
-function fetchDataAndRender() {
-  fetch(); // ?
+async function fetchDataAndRender() {
+  try {
+    const response = await fetch(EXAMPLE_DATA.url);
+    const data = await response.json();
+    console.log("data: ", data);
+  } catch (error) {
+    console.log(error);
+  }
 }

@@ -67,16 +67,21 @@ footer {
   background-color: #55a630;
 }
 
+.flex-container > .flex-item {
+  background-color: #4361ee;
+  color: white;
+}
+
 .flex-on-children > .flex-item {
   flex: 1; /* has to be commented out for no flex on children */
   background-color: #4361ee;
   color: white;
 }
 
-.bigger {
+.flex-on-children > .bigger {
   flex-grow: 2;
 }
 
-.biggest {
+.flex-on-children > .biggest {
   flex-grow: 4;
 }

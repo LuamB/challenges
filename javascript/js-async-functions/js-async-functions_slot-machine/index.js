@@ -2,7 +2,6 @@ import { Wheel } from "./components/Wheel/Wheel.js";
 import { SpinButton } from "./components/SpinButton/SpinButton.js";
 import { Machine } from "./components/Machine/Machine.js";
 import { Result } from "./components/Result/Result.js";
-import { Score } from "./components/Score/Score.js";
 import { getMaxCount } from "./utils/symbols.js";
 
 console.clear();
@@ -18,7 +17,6 @@ machine.append(wheel1, wheel2, wheel3);
 const spinButton = SpinButton();
 const result = Result();
 root.append(machine, spinButton, result);
-const scoreComponent = Score();
 
 // Spin the machine on button click…
 // This time the function is already defined as an async function. 🫡
@@ -27,6 +25,7 @@ spinButton.addEventListener("click", async () => {
   spinButton.disabled = true;
 
   try {
+    // spinning & maxCount
     result.setSpinning();
 
     const values = await Promise.all([
@@ -39,11 +38,11 @@ spinButton.addEventListener("click", async () => {
     const maxCount = getMaxCount(values); // Assuming getMaxCount is correctly implemented
     console.log("Max Count:", maxCount);
 
-    const points = calculatePoints(maxCount);
-    console.log("Points:", points);
-    scoreComponent.addPoints(points);
+    // points
+    var newPoints = calculatePoints(maxCount);
 
-    result.setResult(points); // Pass the actual points, not the entire scoreComponent
+    // result
+    result.setResult(newPoints); // Pass the actual points, not the entire scoreComponent
   } catch (error) {
     result.setMachineChoked();
     console.error(error);

@@ -49,9 +49,11 @@ async function fetchDataAndRender() {
       return;
     }
     const characterData = await response.json();
-    console.log("characters", characterData);
-    characterData.results.forEach((character) => {
+    console.log("data", characterData);
+
+    characterData.results.slice(1).forEach((character) => {
       const card = Card(character);
+      console.log("card", card);
       renderElement(card);
     });
   } catch (error) {

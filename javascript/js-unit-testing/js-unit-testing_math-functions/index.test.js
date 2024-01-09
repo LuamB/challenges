@@ -34,6 +34,10 @@ test("returns a negative value if only the first argument is negative", () => {
   expect(multiply(-2, 3)).toBeLessThan(0);
 });
 
+test("returns a negative value if only the second argument is negative", () => {
+  expect(multiply(2, -3)).toBeLessThan(0);
+});
+
 test("returns a positive value if called with two negative arguments", () => {
   expect(multiply(-2, -3)).toBeGreaterThan(0);
 });

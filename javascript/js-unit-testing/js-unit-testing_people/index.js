@@ -15,9 +15,9 @@ export function getPeopleByAge(people, age) {
 }
 
 export function getPeopleNamesOlderThan(people, age) {
-  return people
-    .filter((person) => person.age > age)
-    .map((person) => `${person.firstName} ${person.lastName}`);
+  const olderPeople = people.filter((person) => person.age > age);
+  return getFullNames(olderPeople);
+  // .map((person) => `${person.firstName} ${person.lastName}`);
 }
 
 export function getPeopleByLastName(people, lastName) {
@@ -29,15 +29,11 @@ export function findPersonById(people, id) {
 }
 
 export function isAnyoneOlderThan(people, age) {
-  if (people.some((person) => person.age > age)) {
-    return true;
-  } else {
-    return false;
-  }
+  return people.some((person) => person.age > age); // returns true or false
 }
 
 export function getFullNamesSortedByAge(people) {
-  return [...people]
-    .sort((a, b) => a.age - b.age)
-    .map((person) => `${person.firstName} ${person.lastName}`);
+  const sortedPeople = [...people].sort((a, b) => a.age - b.age);
+  return getFullNames(sortedPeople);
+  // .map((person) => `${person.firstName} ${person.lastName}`);
 }

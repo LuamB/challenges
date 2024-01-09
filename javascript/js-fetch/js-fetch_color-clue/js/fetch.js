@@ -18,6 +18,21 @@ export async function fetchNewColor() {
    */
 
   // --v-- your code here --v--
+  // const colorData = await fetch(colorApiUrl).then((response) => response.json());
+  try {
+    const response = await fetch(colorApiUrl);
+    if (!response.ok) {
+      console.error("Bad request -> ", response.status);
+      return;
+    }
+    const colorData = await response.json();
+    const colorHexCode = colorData.name.closest_named_hex;
+    const colorName = colorData.name.value;
+
+    setColorToGuess(colorHexCode, colorName);
+  } catch (error) {
+    console.log("Something went wrong -> ", error);
+  }
 
   // --^-- your code here --^--
 }

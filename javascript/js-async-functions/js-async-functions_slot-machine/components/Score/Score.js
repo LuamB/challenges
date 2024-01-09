@@ -1,6 +1,15 @@
 function getScoreFromLocalStorage() {
   const score = localStorage.getItem("score");
-  return score ? parseInt(score, 10) : 0;
+  //check
+  console.log("Stored Score (string):", score);
+
+  const parsedScore =
+    score !== null && !isNaN(parseInt(score, 10)) ? parseInt(score, 10) : 0;
+  console.log("Parsed Score (integer):", parsedScore);
+
+  return parsedScore;
+
+  // return score ? parseInt(score, 10) : 0;
 }
 
 function setScoreInLocalStorage(score) {
@@ -14,7 +23,7 @@ export function Score() {
   function render() {
     scoreElement.innerHTML = /* html */ `
 			<span class="score__label">Score:</span>
-			<span class="score__value">${getScoreFromLocalStorage()}</span>
+      <span class="score__value">${getScoreFromLocalStorage()}</span>
 		`;
   }
 
@@ -22,6 +31,7 @@ export function Score() {
 
   function addPoints(points) {
     setScoreInLocalStorage(Math.max(0, getScoreFromLocalStorage() + points));
+    // console.log("Stored Score:", localStorage.getItem("score")); // check
     render();
   }
 

@@ -7,7 +7,7 @@ export default function App() {
 }
 
 const Sum = ({ valueA, valueB }) => {
-  const result = valueA + valueB;
+  let result = valueA + valueB;
   return (
     <h1>
       {valueA} + {valueB} = {result}

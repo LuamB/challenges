@@ -1,7 +1,7 @@
 {
   "name": "typescript-intro",
   "version": "1.0.0",
-  "description": "",
+  "description": "```bash $ npm init $ npm install typescript -D $ npm install ts-node -D ```",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
   "author": "Jan Redmann",
   "license": "ISC",
   "devDependencies": {
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }

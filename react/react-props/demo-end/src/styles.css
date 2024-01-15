@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+#root>div {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.animal {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.animal span {
+  margin-left: 5px;
+}

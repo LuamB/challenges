@@ -1,10 +1,11 @@
-// import Image from "./components/Image.js";
-// import logo from "./img/logo.jpg";
+import Link from "./Link.js";
+import Image from "./Image.js";
+import logo from "../img/logo.jpg";
 
-export default function Logo({logo}) {
-    return (
-        <a href="#">
-          <img className="round-image" src={logo} alt="logo" />
-        </a>
-    )
+export default function Logo() {
+  return (
+    <Link href="#">
+      <Image className="round-image" src={logo} alt="logo" />
+    </Link>
+  );
 }

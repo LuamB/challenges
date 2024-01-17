@@ -1,7 +1,9 @@
-export default function Header() {
-    return (
-        <header className="header">
-        <a href="#">
+export default function Header({ children }) {
+  return <header className="header">{children}</header>;
+}
+
+{
+  /* <a href="#">
           <img className="round-image" src={logo} alt="logo" />
         </a>
         <nav>
@@ -21,7 +23,5 @@ export default function Header() {
           aria-label="toggle profile"
         >
             <img className="round-image" src={avatar} alt="avatar" />
-        </button>
-      </header>
-    )
+        </button> */
 }

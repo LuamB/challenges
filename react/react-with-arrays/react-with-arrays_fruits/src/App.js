@@ -1,3 +1,4 @@
+import fruits from "./Data/fruits";
 import Card from "./components/Card";
 
 export default function App() {

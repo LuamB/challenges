@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
 export default function App() {
   let code = "?";
+  // const [code, setCode] = useState(0)
 
   const validCode = "🐡🐠🐋";
 

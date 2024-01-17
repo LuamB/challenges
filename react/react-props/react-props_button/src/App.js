@@ -3,15 +3,18 @@ import "./styles.css";
 
 export default function App() {
   // return <h1>Replace me with your component!</h1>;
-  const handleClick = () => {
+  function handleClick() {
     console.log("You clicked me!");
-  };
+  }
+
   return (
     <Button
       color={"darkgreen"}
       disabled={false}
       text={"Click me!"}
-      onClick={handleClick} //enable for 4.
+      onClick={() => {
+        handleClick();
+      }} //enable for 4.
     />
   );
 }

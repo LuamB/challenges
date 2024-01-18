@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
 export default function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   function handleSubmit(event) {
     event.preventDefault();
+    console.log("A new search term was submitted:", searchTerm);
   }
 
   return (
@@ -21,6 +24,8 @@ export default function App() {
           type="text"
           name="holiday"
           placeholder="e.g. Christmas"
+          value={searchTerm}
+          onChange={}
         />
         <label htmlFor="date">Date: </label>
         <input id="date" type="date" name="date" />

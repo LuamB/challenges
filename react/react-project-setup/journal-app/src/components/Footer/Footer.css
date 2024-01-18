@@ -3,6 +3,6 @@
   color: var(--color-foam);
   background: var(--color-granite);
   text-align: center;
-  font-weight: lighter;
+  font-weight: 200;
   padding: 18px 16px;
 }

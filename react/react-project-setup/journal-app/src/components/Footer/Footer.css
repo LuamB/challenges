@@ -1,0 +1,8 @@
+.footer {
+  margin-top: 32px;
+  color: var(--color-foam);
+  background: var(--color-granite);
+  text-align: center;
+  font-weight: lighter;
+  padding: 18px 16px;
+}

@@ -4,9 +4,9 @@ import Entry from "../Entry";
 import Tabs from "../Tabs";
 import Tab from "../Tab";
 import Badge from "../Badge";
-import { Fragment } from "react";
+import { useState, Fragment } from "react";
 
-const entries = [
+const initialEntries = [
   {
     id: 1000,
     date: "Feb 5, 2025",
@@ -37,6 +37,9 @@ const entries = [
 ];
 
 export default function EntriesSection() {
+  const [entries, setEntries] = useState(initialEntries);
+  console.log("entries: ", entries);
+  
   return (
     <section className="entries-section">
       <Tabs>
@@ -48,7 +51,7 @@ export default function EntriesSection() {
         </Tab>
       </Tabs>
       <div className="entries-section__entries">
-        {entries.map((entry, index) => (
+        {initialEntries.map((entry, index) => (
           <Fragment key={entry.id}>
             {index > 0 ? <Divider /> : null}
             <Entry date={entry.date} motto={entry.motto} notes={entry.notes} />

@@ -1,6 +1,7 @@
 import "./List.css";
 
 export default function List({ tags, onDeleteTag }) {
+  console.log("tags: ", tags);
   return (
     <>
       <h2>Your Tags:</h2>

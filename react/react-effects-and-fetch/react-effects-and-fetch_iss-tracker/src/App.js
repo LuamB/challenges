@@ -16,11 +16,20 @@ export default function App() {
       const response = await fetch(URL);
       const data = await response.json();
       setCoords(data);
-      console.log("data", data);
+      // console.log("data", data);
     } catch (error) {
       console.log(error);
     }
   }
+
+  useEffect(() => {
+    const interval = setInterval(getISSCoords, 5000);
+    console.log("interval", interval);
+    // cleanup function
+    return () => {
+      clearInterval(interval);
+    };
+  }, []); // set 5s interval at mounting
 
   return (
     <main>

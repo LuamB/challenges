@@ -6,7 +6,7 @@ import Tab from "../Tab";
 import Badge from "../Badge";
 import { Fragment } from "react";
 
-export default function EntriesSection({ entries }) {
+export default function EntriesSection({ entries, onSubmit }) {
   // const [entries, setEntries] = useState(initialEntries);
   // console.log("entries: ", entries);
 

@@ -38,16 +38,12 @@ function App() {
 
   const [entries, setEntries] = useState(initialEntries);
 
-  function handleNewEntry(newEntry) {
-    setEntries([...entries, newEntry]);
-  }
-
   return (
     <div className="app">
       <Header />
       <main className="app__main">
         <EntryForm />
-        <EntriesSection entries={handleNewEntry} />
+        <EntriesSection entries={entries} />
       </main>
       <Footer />
     </div>

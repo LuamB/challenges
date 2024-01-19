@@ -7,7 +7,7 @@ export default function Form({ onAddTag }) {
     const data = Object.fromEntries(formData);
 
     onAddTag(data.tag);
-
+    
     event.target.reset();
     event.target.elements.tag.focus();
   }

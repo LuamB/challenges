@@ -10,7 +10,7 @@ export default function EntriesSection({
   entries,
   onToggleFavorite,
   onShowAllEntries,
-  onShowFavorites,
+  onShowFavoriteEntries,
 }) {
   return (
     <section className="entries-section">
@@ -18,7 +18,7 @@ export default function EntriesSection({
         <Tab active onClick={onShowAllEntries}>
           All Entries <Badge isActive>3</Badge>
         </Tab>
-        <Tab onClick={onShowFavorites}>
+        <Tab onClick={onShowFavoriteEntries}>
           Favorites <Badge>1</Badge>
         </Tab>
       </Tabs>

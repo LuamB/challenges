@@ -22,9 +22,8 @@ root.append(machine, spinButton, result);
 // This time the function is already defined as an async function. 🫡
 //                                      ↙️
 spinButton.addEventListener("click", async () => {
-  spinButton.disabled = true;
-
   try {
+    spinButton.disabled = true;
     // spinning & maxCount
     result.setSpinning();
 
@@ -33,10 +32,8 @@ spinButton.addEventListener("click", async () => {
       wheel2.spin(),
       wheel3.spin(),
     ]);
-    console.log("Values:", values);
 
-    const maxCount = getMaxCount(values); // Assuming getMaxCount is correctly implemented
-    console.log("Max Count:", maxCount);
+    const maxCount = getMaxCount(values);
 
     // points
     var newPoints = calculatePoints(maxCount);

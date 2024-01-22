@@ -12,6 +12,7 @@ export default function EntriesSection({
   onShowAllEntries,
   onShowFavoriteEntries,
 }) {
+  console.log("Filtered Entries:", entries);
   return (
     <section className="entries-section">
       <Tabs>

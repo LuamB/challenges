@@ -38,6 +38,10 @@ function App() {
 
   const [entries, setEntries] = useState(initialEntries);
 
+  function handleAddEntry(newEntry) {
+
+  }
+
   return (
     <div className="app">
       <Header />

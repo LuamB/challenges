@@ -6,12 +6,16 @@ import { ReactComponent as Star } from "./star.svg";
 export default function FavoriteButton() {
   const [isFavorite, setIsFavorite] = useState(false);
 
+  function onToggleFavorite({id, isFavorite}) {};
+
+  // () => {
+  //   setIsFavorite(!isFavorite);
+  // };
+
   return (
     <button
       className="favorite-button"
-      onClick={() => {
-        setIsFavorite(!isFavorite);
-      }}
+      onClick={onToggleFavorite}
       aria-label="favorite"
     >
       {isFavorite ? <StarFilled /> : <Star />}

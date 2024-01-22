@@ -1,4 +1,5 @@
 import "./App.css";
+import { uid } from "uid";
 import { useState } from "react";
 import EntriesSection from "./components/EntriesSection";
 import EntryForm from "./components/EntryForm";
@@ -39,14 +40,18 @@ function App() {
   const [entries, setEntries] = useState(initialEntries);
 
   function handleAddEntry(newEntry) {
-
+    newEntry.date = new Date().toLocaleDateString("en-us", {
+      dateStyle: "medium",
+    });
+    newEntry.id = uid();
+    setEntries([newEntry, ...entries]);
   }
 
   return (
     <div className="app">
       <Header />
       <main className="app__main">
-        <EntryForm />
+        <EntryForm onAddEntry={handleAddEntry} />
         <EntriesSection entries={entries} />
       </main>
       <Footer />

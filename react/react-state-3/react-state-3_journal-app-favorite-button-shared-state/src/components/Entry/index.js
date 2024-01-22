@@ -5,9 +5,9 @@ export default function Entry({
   motto,
   notes,
   date,
-  onToggleFavorite,
-  isFavorite,
   id,
+  isFavorite,
+  onToggleFavorite,
 }) {
   return (
     <article className="entry">

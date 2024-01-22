@@ -7,6 +7,7 @@ import Badge from "../Badge";
 import { Fragment } from "react";
 
 export default function EntriesSection({
+  filter,
   entries,
   onToggleFavorite,
   onShowAllEntries,
@@ -16,11 +17,11 @@ export default function EntriesSection({
   return (
     <section className="entries-section">
       <Tabs>
-        <Tab active onClick={onShowAllEntries}>
-          All Entries <Badge isActive>3</Badge>
+        <Tab isActive={filter === "all"} onClick={onShowAllEntries}>
+          All Entries <Badge isActive={filter === "all"}>3</Badge>
         </Tab>
-        <Tab onClick={onShowFavoriteEntries}>
-          Favorites <Badge>1</Badge>
+        <Tab isActive={filter === "favorites"} onClick={onShowFavoriteEntries}>
+          Favorites <Badge isActive={filter === "favorites"}>1</Badge>
         </Tab>
       </Tabs>
       <div className="entries-section__entries">

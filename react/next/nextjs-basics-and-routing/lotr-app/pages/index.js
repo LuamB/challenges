@@ -3,7 +3,9 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div>
-      <Link href={"/volumes"}>Volumes</Link>
+      <h1>Lord of the Rings</h1>
+      <Link href={"/volumes"}>📚 All Volumes</Link>
+      <br />
     </div>
   );
 }

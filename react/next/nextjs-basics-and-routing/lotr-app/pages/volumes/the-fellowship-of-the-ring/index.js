@@ -9,19 +9,23 @@ export default function TheFellowShipOfTheKing() {
 
   return (
     <>
-      <Link href={"/volumes"}>← All Volumes</Link><p></p>
-      <Link href={`/volumes/${volumes[1].slug}`}>Next Volume →</Link>
+      <Link href={"/"}>🏠 Home</Link>
+      <p></p>
+      <Link href={"/volumes"}>📚 All Volumes</Link>
       <h1>{volumes[0].title}</h1>
       <p>{volumes[0].description}</p>
       <ul>
         {volume.books.map((book) => (
           <li key={book.ordinal}>
-            <p>{book.ordinal}</p>
-            <p>{book.title}</p>
+            <h3>
+              {book.ordinal}: {book.title}
+            </h3>
           </li>
         ))}
       </ul>
       <Image src={volume.cover} alt="cover image" width={140} height={230} />
+      <p></p>
+      <Link href={`/volumes/${volumes[1].slug}`}>Next Volume ➡️</Link>
     </>
   );
 }

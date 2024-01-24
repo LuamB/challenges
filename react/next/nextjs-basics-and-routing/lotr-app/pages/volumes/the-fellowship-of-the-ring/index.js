@@ -7,7 +7,7 @@ export default function TheFellowShipOfTheKing() {
   );
   return (
     <>
-      <Link href={"/volumes"}>← Volumes</Link>
+      <Link href={"/volumes"}>← All Volumes</Link>
       <h1>{volumes[0].title}</h1>
       <p>{volumes[0].description}</p>
       <ul>

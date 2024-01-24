@@ -5,7 +5,6 @@ export default function TheFellowShipOfTheKing() {
   const volume = volumes.find(
     ({ slug }) => slug === "the-fellowship-of-the-ring"
   );
-  console.log("volume ", volume);
   return (
     <>
       <Link href={"/volumes"}>← Volumes</Link>

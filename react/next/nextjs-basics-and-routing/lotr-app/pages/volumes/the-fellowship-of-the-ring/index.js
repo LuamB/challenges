@@ -3,29 +3,45 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function TheFellowShipOfTheKing() {
-  const volume = volumes.find(
+  // I had a different working solution, see commits, but opting for Ada's method of destructuring, here
+  const index = volumes.findIndex(
     ({ slug }) => slug === "the-fellowship-of-the-ring"
   );
+  const volume = volumes[index];
+  const { title, description, cover, books } = volume;
 
+  // I had a different working solution for pagination, see commits, but opting for Tillman's below
   return (
     <>
       <Link href={"/"}>🏠 Home</Link>
       <p></p>
       <Link href={"/volumes"}>📚 All Volumes</Link>
-      <h1>{volumes[0].title}</h1>
-      <p>{volumes[0].description}</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
       <ul>
-        {volume.books.map((book) => (
-          <li key={book.ordinal}>
+        {books.map(({ ordinal, title }) => (
+          <li key={ordinal}>
             <h3>
-              {book.ordinal}: {book.title}
+              {ordinal}: {title}
             </h3>
           </li>
         ))}
       </ul>
-      <Image src={volume.cover} alt="cover image" width={140} height={230} />
+      <Image src={cover} alt={title} width={140} height={230} />
       <p></p>
-      <Link href={`/volumes/${volumes[1].slug}`}>Next Volume ➡️</Link>
+      {index > 0 && (
+        <>
+          <Link href={`/volumes/${volumes[index - 1].slug}`}>
+            {`⬅️ Last Volume: ${volumes[index - 1].title}`}
+          </Link>
+          <p></p>
+        </>
+      )}
+      {index < volumes.length - 1 && (
+        <Link href={`/volumes/${volumes[index + 1].slug}`}>
+          {`➡️ Next Volume: ${volumes[index + 1].title}`}
+        </Link>
+      )}
     </>
   );
 }

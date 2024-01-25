@@ -3,30 +3,43 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function TheTwoTowers() {
-  const volume = volumes.find(({ slug }) => slug === "the-two-towers");
+  const index = volumes.findIndex(
+    ({ slug }) => slug === "the-two-towers"
+  );
+  const volume = volumes[index];
+  const { title, description, cover, books } = volume;
+
   return (
     <>
       <Link href={"/"}>🏠 Home</Link>
       <p></p>
       <Link href={"/volumes"}>📚 All Volumes</Link>
-      <p></p>
-      <Link href={`/volumes/${volumes[0].slug}`}>⬅️ Last Volume</Link>
-      <p></p>
-
-      <h1>{volumes[1].title}</h1>
-      <p>{volumes[1].description}</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
       <ul>
-        {volume.books.map((book) => (
-          <li key={book.ordinal}>
+        {books.map(({ ordinal, title }) => (
+          <li key={ordinal}>
             <h3>
-              {book.ordinal}: {book.title}
+              {ordinal}: {title}
             </h3>
           </li>
         ))}
       </ul>
-      <Image src={volume.cover} alt="cover image" width={140} height={230} />
+      <Image src={cover} alt={title} width={140} height={230} />
       <p></p>
-      <Link href={`/volumes/${volumes[2].slug}`}>Next Volume ➡️</Link>
+      {index > 0 && (
+        <>
+          <Link href={`/volumes/${volumes[index - 1].slug}`}>
+            {`⬅️ Last Volume: ${volumes[index - 1].title}`}
+          </Link>
+          <p></p>
+        </>
+      )}
+      {index < volumes.length - 1 && (
+        <Link href={`/volumes/${volumes[index + 1].slug}`}>
+          {`➡️ Next Volume: ${volumes[index + 1].title}`}
+        </Link>
+      )}
     </>
   );
 }

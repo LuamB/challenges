@@ -3,16 +3,14 @@ import styled, { css } from "styled-components";
 const StyledBox = styled.div`
   width: 100px;
   height: 100px;
-  background-color: green;
+  background-color: ${({ $isBlack }) => ($isBlack ? "black" : "green")};
   margin: 2rem;
 
-  ${({ $isBlack }) =>
-    $isBlack &&
-    css`
-      background-color: black;
-    `}
+  &:hover {
+    background-color: red;
+  }
 `;
 
-export default function BoxWithStyledComponents({ isBlack }) {
-  return <StyledBox $isBlack={isBlack}></StyledBox>;
+export default function BoxWithStyledComponents({ $isBlack }) {
+  return <StyledBox $isBlack={$isBlack}></StyledBox>;
 }

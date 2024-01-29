@@ -2,16 +2,21 @@ import { useState } from "react";
 import GlobalStyle from "../styles";
 import Layout from "../components/Layout";
 
-const initLights = [
-  { id: 1, isOn: false, name: "Living Room" },
-  { id: 2, isOn: false, name: "Kitchen" },
-  { id: 3, isOn: false, name: "Bedroom" },
-  { id: 4, isOn: false, name: "Bathroom" },
-  { id: 5, isOn: false, name: "Garage" },
-  { id: 6, isOn: false, name: "Porch" },
-  { id: 7, isOn: false, name: "Garden" },
-  { id: 8, isOn: false, name: "Office" },
+const roomNames = [
+  "Living Room",
+  "Kitchen",
+  "Bedroom",
+  "Bathroom",
+  "Garage",
+  "Porch",
+  "Garden",
+  "Office",
 ];
+const initLights = roomNames.map((name, index) => ({
+  id: index + 1,
+  isOn: false,
+  name: name,
+}));
 
 export default function App({ Component, pageProps }) {
   // const [isOn, setIsOn] = useState(false);

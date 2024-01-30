@@ -21,7 +21,7 @@ const fetcher = async (URL) => {
 };
 
 export default function ISSTracker() {
-  const { data, error, isLoading } = useSWR(URL, fetcher);
+  const { data, error, isLoading } = useSWR(URL, fetcher, { refreshInterval: 5000 });
   console.log("data: ", data);
 
   if (isLoading)

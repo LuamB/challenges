@@ -21,7 +21,7 @@ const fetcher = async (URL) => {
 };
 
 export default function ISSTracker() {
-  const { data, error, isLoading } = useSWR(URL, fetcher, { refreshInterval: 5000 });
+  const { data, mutate, isLoading, error } = useSWR(URL, fetcher, { refreshInterval: 5000 });
   console.log("data: ", data);
 
   if (isLoading)
@@ -68,7 +68,7 @@ export default function ISSTracker() {
       <Controls
         longitude={data.longitude}
         latitude={data.latitude}
-        // onRefresh={getISSdata}
+        onRefresh={()=> mutate()}
       />
     </main>
   );

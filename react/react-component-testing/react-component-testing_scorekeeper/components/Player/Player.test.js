@@ -4,13 +4,13 @@ import Button from "../Button";
 import Player, { PlayerWrapper, PlayerScore } from ".";
 
 // Mock callback functions
-const mockOnDecreasePlayerScore = jest.fn();
-const mockOnIncreasePlayerScore = jest.fn();
+const handleDecrease = jest.fn();
+const handleIncrease = jest.fn();
 
 beforeEach(() => {
   // Reset the mock functions before each test
-  mockOnDecreasePlayerScore.mockClear();
-  mockOnIncreasePlayerScore.mockClear();
+  handleDecrease.mockClear();
+  handleIncrease.mockClear();
 });
 
 test("renders player information and two buttons", () => {
@@ -26,14 +26,14 @@ test("renders player information and two buttons", () => {
       <PlayerScore color={color}>
         <Button
           aria-label="Decrease Score"
-          onDecreasePlayerScore={mockOnDecreasePlayerScore}
+          onDecreasePlayerScore={handleDecrease}
         >
           -
         </Button>
         <span>{score}</span>
         <Button
           aria-label="Increase Score"
-          onIncreasePlayerScore={mockOnIncreasePlayerScore}
+          onIncreasePlayerScore={handleIncrease}
         >
           +
         </Button>
@@ -47,4 +47,27 @@ test("renders player information and two buttons", () => {
   expect(screen.getAllByRole("button")).toHaveLength(2);
 });
 
-test("calls callbacks when increasing or decreasing score", async () => {});
+test("calls callbacks when increasing or decreasing score", async () => {
+  // Set up userEvent
+  const user = userEvent.setup();
+
+  // Render Player component
+  render(
+    <Player
+      onDecreasePlayerScore={handleDecrease}
+      onIncreasePlayerScore={handleIncrease}
+    />
+  );
+
+  const decreaseButton = screen.getByRole("button", { name: /decrease score/i });
+  const increaseButton = screen.getByRole("button", { name: /increase score/i });
+
+  // Simulate user action
+  await user.click(increaseButton);
+  await user.click(decreaseButton);
+  await user.click(increaseButton);
+
+  // Assertions
+  expect(handleDecrease).toHaveBeenCalledTimes(1);
+  expect(handleIncrease).toHaveBeenCalledTimes(2);
+});

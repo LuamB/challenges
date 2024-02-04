@@ -59,8 +59,12 @@ test("calls callbacks when increasing or decreasing score", async () => {
     />
   );
 
-  const decreaseButton = screen.getByRole("button", { name: /decrease score/i });
-  const increaseButton = screen.getByRole("button", { name: /increase score/i });
+  const decreaseButton = screen.getByRole("button", {
+    name: /decrease score/i,
+  });
+  const increaseButton = screen.getByRole("button", {
+    name: /increase score/i,
+  });
 
   // Simulate user action
   await user.click(increaseButton);

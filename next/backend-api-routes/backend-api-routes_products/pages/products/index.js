@@ -4,16 +4,21 @@ import styled from "styled-components";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
+const StyledList = styled.ul`
+  list-style: none;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: green;
+`;
+
 export default function AllProducts() {
   const { data, isLoading, error } = useSWR("api/products", fetcher);
   console.log("data", data);
 
   if (error) return <div>Failed to load</div>;
   if (isLoading) return <div>Loading ...</div>;
-
-  const StyledList = styled.ul`
-    list-style: none;
-  `;
 
   return (
     <StyledList>
@@ -23,7 +28,7 @@ export default function AllProducts() {
             <li key={id}>
               <strong>Name: {name}</strong> <br />
               Price: {price} {currency} <br />
-              <Link href={`products/${id}`}>More Details</Link>
+              <StyledLink href={`products/${id}`}>More Details</StyledLink>
               <hr />
             </li>
           </>

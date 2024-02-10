@@ -2,7 +2,7 @@ export const fruits = [
   {
     id: 1,
     name: "🍌 Banana",
-    color: "yellow",
+    color: "red",
   },
   {
     id: 2,
@@ -12,7 +12,7 @@ export const fruits = [
   {
     id: 3,
     name: "🍍 Pineapple",
-    color: "yellow",
+    color: "green",
   },
   {
     id: 4,
@@ -22,6 +22,6 @@ export const fruits = [
   {
     id: 5,
     name: "🥝 Kiwi",
-    color: "yellow",
+    color: "red",
   },
 ];

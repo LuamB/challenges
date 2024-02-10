@@ -8,6 +8,7 @@ export default function EntryForm({ onAddEntry }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log("event", e);
 
     const newEntry = {
       motto: motto,
@@ -32,8 +33,8 @@ export default function EntryForm({ onAddEntry }) {
             type="text"
             name="motto"
             id="motto"
-            // value={motto}
-            // onChange={(e) => setMotto(e.target.value)}
+            value={motto}
+            onChange={(e) => setMotto(e.target.value)}
           />
         </div>
         <div className="entry-form__field">
@@ -42,8 +43,8 @@ export default function EntryForm({ onAddEntry }) {
             name="notes"
             id="notes"
             rows="4"
-            // value={notes}
-            // onChange={(e) => setNotes(e.target.value)}
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
           />
         </div>
         <div className="entry-form__button-wrapper">

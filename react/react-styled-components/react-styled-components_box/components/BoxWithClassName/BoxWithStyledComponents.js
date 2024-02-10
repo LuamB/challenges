@@ -12,5 +12,5 @@ const StyledBox = styled.div`
 `;
 
 export default function BoxWithStyledComponents({ $isBlack }) {
-  return <StyledBox $isBlack={$isBlack}></StyledBox>;
+  return <StyledBox $isBlack={$isBlack} />;
 }

@@ -1,3 +1,5 @@
+import Link from "next/link";
+import styled from "styled-components";
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 import useSWR from "swr";
@@ -19,7 +21,7 @@ const fetcher = async (url) => {
 export default function Character() {
   // get id
   const router = useRouter();
-  const { id } = router.query;
+  const id = router.query.id;
 
   // fetch data per character
   const { data, isLoading, error } = useSWR(
@@ -50,6 +52,14 @@ export default function Character() {
         eyeColor={data.eye_color}
         birthYear={data.birth_year}
       />
+      <StyledLink href={"/"}>← Back to Overview</StyledLink>
     </Layout>
   );
 }
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  align-self: center;
+  margin-top: 1em;
+  color: lightblue;
+`;

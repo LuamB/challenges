@@ -8,7 +8,11 @@ export const DescriptionList = styled.dl`
 `;
 
 export const StyledCard = styled.article`
+  display: flex;
+  flex-direction: column;
   padding: 0.75rem;
   border-radius: 10px;
   border: 1px solid var(--color-light);
 `;
+
+// added display and flex-direction to card

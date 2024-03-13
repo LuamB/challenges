@@ -3,29 +3,41 @@
 }
 
 img {
-  border-radius: 5%; /* Use 50% to create a circle, adjust as needed */
+  border-radius: 8%; /* Use 50% to create a circle, adjust as needed */
   overflow: hidden;
+  padding: 0 1rem;
 }
 
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+  padding: 0 1rem;
 }
 
 p {
   font-family: Arial, Helvetica, sans-serif;
+  padding: 0 1rem;
 }
 
-.light-weight {
-  font-weight: 300;
+.thin {
+  font-weight: 100;
+  color: grey;
 }
 
 button svg {
   color: blue;
   background: white;
-  border: 0;
-  border-radius: 0;
   padding: 0 0;
+  border-radius: 0;
+  border: 0;
+}
+
+button {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0%;
+  border: 0;
+  padding: 0 1rem;
 }
 
 /*svg {

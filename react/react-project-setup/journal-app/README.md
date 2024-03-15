@@ -16,7 +16,7 @@ Check the
 and think about the components you will need to create and how they will compose.
 
 <center>
-<img src="./resources/journal_app_design@2x.png" alt="Journal App Design" width="200" />
+<img src="./src/assets/journal_app_design@2x.png" alt="Journal App Design" width="200" />
 </center>
 
 Here are some hints to get you started:
